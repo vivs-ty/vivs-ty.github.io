@@ -2,38 +2,100 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Vivesh Tyagi | Sr. Cloud Engineer </title>
+  <title>Vivesh Tyagi | Sr. Cloud Specialist </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <header>
-    <h1>Vivesh Tyagi</h1>
-    <p>Cloud Enthusiast | DevOps Engineer</p>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="projects.html">Projects</a>
-      <a href="resume.pdf" target="_blank">Resume</a>
-      <a href="https://github.com/vivs-ty" target="_blank">GitHub</a>
-      <a href="https://in.linkedin.com/in/vivesh-tyagi-9085a9a9" target="_blank">LinkedIn</a>
-    </nav>
+  <nav id="navbar">
+    <div class="logo">Vivesh Tyagi</div>
+    <ul class="nav-links">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="resume.pdf" target="_blank" class="resume-btn">Resume</a></li>
+    </ul>
+    <div class="menu-toggle">
+      <i class="fas fa-bars"></i>
+    </div>
+  </nav>
+
+  <header id="home" class="section hero-section">
+    <div class="hero-content">
+      <h1><span id="typing"></span></h1>
+      <p>Cloud Enthusiast | DevOps Engineer | Open Source Contributor</p>
+      <div class="social-icons">
+        <a href="https://github.com/vivs-ty" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://in.linkedin.com/in/vivesh-tyagi-9085a9a9" target="_blank"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
   </header>
-  <main>
-    <section>
-      <h2>About Me</h2>
-      <p>I love automating cloud infrastructure, collaborating on open-source, and solving puzzles and trying new recipes in my free time.</p>
-    </section>
-    <section>
-      <h2>Skills</h2>
-      <ul class="skills">
-        <li>GIT</li>
-        <li>Amazon Web Services (AWS)</li>
-        <li>Google Cloud Platform (GCP)</li>
-        <li>Shell Scripting</li>
-        <li>Ansible</li>
-        <li>Terraform</li>
-      </ul>
-    </section>
-  </main>
+
+  <section id="about" class="section fade-in">
+    <h2>About Me</h2>
+    <p>
+      Passionate about automating cloud infrastructure with hands-on experience in AWS, GCP, DevOps tooling, and open-source. I love collaborating, learning, and solving real-world problems. I also enjoy solving puzzles and trying new recipes!
+    </p>
+  </section>
+
+  <section id="skills" class="section fade-in">
+    <h2>Skills</h2>
+    <div class="skills-container">
+      <div class="skill-card"><i class="fab fa-git-alt"></i>GIT</div>
+      <div class="skill-card"><i class="fab fa-aws"></i>AWS</div>
+      <div class="skill-card"><i class="fab fa-google"></i>GCP</div>
+      <div class="skill-card"><i class="fas fa-terminal"></i>Shell Scripting</div>
+      <div class="skill-card"><i class="fas fa-gear"></i>Ansible</div>
+      <div class="skill-card"><i class="fas fa-code-branch"></i>Terraform</div>
+    </div>
+  </section>
+
+  <section id="projects" class="section fade-in">
+    <h2>Projects</h2>
+    <div class="projects-container">
+      <div class="project-card" onclick="openModal('proj1')">
+        <h3>AWS Infra Automation</h3>
+        <p>Provision cloud infra using Terraform & Ansible.</p>
+      </div>
+      <div class="project-card" onclick="openModal('proj2')">
+        <h3>GCP Cloud Scripts</h3>
+        <p>Shell scripts for GCP automation & monitoring.</p>
+      </div>
+      <!-- Add more projects as needed -->
+    </div>
+    <!-- Modal Popups -->
+    <div id="proj1" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('proj1')">&times;</span>
+        <h3>AWS Infra Automation</h3>
+        <p>Automates AWS resource provisioning and configuration using Terraform and Ansible playbooks. <br>
+        <a href="https://github.com/vivs-ty/aws-infra-automation" target="_blank">View on GitHub</a></p>
+      </div>
+    </div>
+    <div id="proj2" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('proj2')">&times;</span>
+        <h3>GCP Cloud Scripts</h3>
+        <p>Reusable shell scripts for GCP resource management, automation, and monitoring.<br>
+        <a href="https://github.com/vivs-ty/gcp-cloud-scripts" target="_blank">View on GitHub</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section fade-in">
+    <h2>Contact</h2>
+    <form class="contact-form" action="mailto:viveshtyagi.work@gmail.com" method="POST" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send <i class="fas fa-paper-plane"></i></button>
+    </form>
+  </section>
+
   <footer>
     <p>© 2025 Vivesh Tyagi</p>
   </footer>
