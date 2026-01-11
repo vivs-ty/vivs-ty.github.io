@@ -12,6 +12,4 @@ Files
 - `index.html` — main page with hero, projects, contact.
 - `style.css` — updated styling, dark theme variables, focus styles.
 - `script.js` — typing effect, theme persistence, particles, filters, shortcuts.
-- `resume.pdf` — resume (if present).
-
-Open the site locally (e.g., using a static file server) to see the interactive features.
+- `resume.pdf` — resume.
