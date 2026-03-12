@@ -14,7 +14,7 @@ function typeAnim() {
     setTimeout(typeAnim, 35);
   } else {
     if (!isDeleting) { isDeleting = true; setTimeout(typeAnim, 900); }
-    else { isDeleting = false; i = (i + 1) % typedText.length; setTimeout(typeAnim, 600); }
+    else { isDeleting = false; i = (i + 1) % typedText.length; j = 0; setTimeout(typeAnim, 600); }
   }
 }
 
