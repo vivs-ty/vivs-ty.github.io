@@ -847,3 +847,212 @@ footer p { color: #888; margin: 0; }
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; }
 }
+
+/* ===================== Cursor Spotlight ===================== */
+#cursor-spotlight {
+  pointer-events: none;
+  position: fixed;
+  z-index: 9998;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(84,160,255,0.07) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  transition: left 0.06s linear, top 0.06s linear;
+  will-change: left, top;
+}
+body.dark #cursor-spotlight {
+  background: radial-gradient(circle, rgba(123,211,137,0.09) 0%, transparent 70%);
+}
+@media (hover: none) { #cursor-spotlight { display: none; } }
+
+/* ===================== What I'm Exploring ===================== */
+.exploring-intro {
+  margin-bottom: 1.8em;
+  line-height: 1.7;
+  opacity: 0.85;
+}
+
+.flip-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.6em;
+}
+
+.flip-card {
+  height: 200px;
+  perspective: 1000px;
+  cursor: pointer;
+  outline: none;
+}
+.flip-card:focus .flip-card-inner { transform: rotateY(180deg); }
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+.flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.4em 1em;
+  text-align: center;
+}
+
+.flip-card-front {
+  background: var(--card);
+  box-shadow: 0 2px 14px var(--shadow);
+  border: 1.5px solid rgba(84,160,255,0.15);
+  transition: box-shadow 0.25s, border-color 0.25s;
+}
+.flip-card:hover .flip-card-front { border-color: var(--accent); }
+
+.flip-card-front i {
+  font-size: 2.4em;
+  color: var(--accent);
+  margin-bottom: 0.5em;
+}
+.flip-card-front h3 {
+  font-size: 0.98em;
+  color: var(--primary);
+  margin: 0 0 0.5em;
+  font-weight: 700;
+}
+.flip-hint {
+  font-size: 0.7em;
+  color: var(--accent);
+  opacity: 0.6;
+  font-style: italic;
+}
+
+.flip-card-back {
+  background: linear-gradient(135deg, var(--accent) 0%, #2d54c5 100%);
+  color: #fff;
+  transform: rotateY(180deg);
+  padding: 1.2em;
+}
+.flip-card-back p {
+  font-size: 0.85em;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ===================== GitHub Stats ===================== */
+.stats-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.4em;
+  align-items: center;
+  justify-items: center;
+}
+
+.stats-img-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 14px var(--shadow);
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s, box-shadow 0.25s;
+  width: 100%;
+}
+.stats-img-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 28px var(--shadow);
+}
+.stats-img-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+.stats-img-card--wide {
+  grid-column: 1 / -1;
+}
+
+/* ===================== Fun Fact Section ===================== */
+.fun-fact-section {
+  max-width: 860px;
+  margin: 0 auto 2em;
+  padding: 0 2em;
+}
+.fun-fact-inner {
+  background: linear-gradient(135deg, rgba(84,160,255,0.1) 0%, rgba(255,180,0,0.08) 100%);
+  border: 1.5px solid rgba(84,160,255,0.2);
+  border-radius: var(--radius);
+  padding: 1.2em 2em;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+.fun-fact-emoji {
+  font-size: 2em;
+  flex-shrink: 0;
+  animation: spinOnce 0.6s ease-out;
+}
+@keyframes spinOnce {
+  from { transform: rotate(-15deg) scale(0.8); }
+  to   { transform: rotate(0deg) scale(1); }
+}
+.fun-fact-text {
+  margin: 0;
+  line-height: 1.6;
+  font-size: 0.95em;
+}
+
+/* ===================== Quote Banner ===================== */
+.quote-banner {
+  max-width: 860px;
+  margin: 0 auto 2.5em;
+  padding: 1.4em 2em;
+  text-align: center;
+  border-top: 1.5px solid rgba(84,160,255,0.15);
+  border-bottom: 1.5px solid rgba(84,160,255,0.15);
+}
+.quote-text {
+  font-size: 1.25em;
+  font-style: italic;
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* ===================== Ripple Effect ===================== */
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: rippleAnim 0.55s linear;
+  background: rgba(255,255,255,0.4);
+  pointer-events: none;
+}
+@keyframes rippleAnim {
+  to { transform: scale(4); opacity: 0; }
+}
+.btn-primary, .btn-outline, button[type=submit], .filter-btn, .resume-btn, #theme-toggle, #back-to-top {
+  position: relative;
+  overflow: hidden;
+}
+
+/* ===================== Responsive (new sections) ===================== */
+@media (max-width: 700px) {
+  .stats-cards-grid { grid-template-columns: 1fr; }
+  .stats-img-card--wide { grid-column: 1; }
+  .flip-cards-container { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .fun-fact-inner { flex-direction: column; text-align: center; }
+  .quote-text { font-size: 1.05em; }
+}

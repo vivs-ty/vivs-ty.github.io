@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+  <div id="cursor-spotlight" aria-hidden="true"></div>
   <div id="scroll-progress" aria-hidden="true"></div>
 
   <nav id="navbar">
@@ -19,6 +20,8 @@
       <li><a href="#skills">Skills</a></li>
       <li><a href="#certifications">Certifications</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#exploring">Exploring</a></li>
+      <li><a href="#stats">Stats</a></li>
       <li><a href="#contact">Contact</a></li>
       <li><a href="resume.pdf" target="_blank" class="resume-btn">Resume</a></li>
     </ul>
@@ -246,6 +249,91 @@
       </div>
     </div>
   </section>
+
+  <!-- ===================== What I'm Exploring ===================== -->
+  <section id="exploring" class="section fade-in">
+    <h2>🌱 What I'm Exploring</h2>
+    <p class="exploring-intro">Currently diving deeper into <strong>cloud-native technologies</strong> and expanding expertise in <strong>infrastructure automation</strong>.</p>
+    <div class="flip-cards-container">
+      <div class="flip-card" tabindex="0" aria-label="Cloud Native - click to learn more">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <i class="fas fa-cloud"></i>
+            <h3>Cloud Native</h3>
+            <span class="flip-hint">Hover to explore</span>
+          </div>
+          <div class="flip-card-back">
+            <p>Kubernetes, Service Meshes, Serverless architectures, and container orchestration patterns for resilient, scalable deployments.</p>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card" tabindex="0" aria-label="Platform Engineering - click to learn more">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <i class="fas fa-layer-group"></i>
+            <h3>Platform Engineering</h3>
+            <span class="flip-hint">Hover to explore</span>
+          </div>
+          <div class="flip-card-back">
+            <p>Building Internal Developer Platforms (IDPs), GitOps workflows with ArgoCD/Flux, and self-service infrastructure tooling.</p>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card" tabindex="0" aria-label="Observability - click to learn more">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <i class="fas fa-chart-line"></i>
+            <h3>Observability</h3>
+            <span class="flip-hint">Hover to explore</span>
+          </div>
+          <div class="flip-card-back">
+            <p>OpenTelemetry, distributed tracing, metrics pipelines, and building robust monitoring stacks with Prometheus &amp; Grafana.</p>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card" tabindex="0" aria-label="Security as Code - click to learn more">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <i class="fas fa-shield-alt"></i>
+            <h3>Security as Code</h3>
+            <span class="flip-hint">Hover to explore</span>
+          </div>
+          <div class="flip-card-back">
+            <p>Shifting security left with policy-as-code (OPA/Rego), secret management (Vault), and automated compliance checks in CI/CD.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== GitHub Stats ===================== -->
+  <section id="stats" class="section fade-in">
+    <h2>📊 GitHub Stats &amp; Activity</h2>
+    <div class="stats-cards-grid">
+      <div class="stats-img-card">
+        <img src="https://github-readme-stats.vercel.app/api?username=vivs-ty&amp;show_icons=true&amp;theme=tokyonight&amp;hide_border=true&amp;bg_color=00000000&amp;title_color=54a0ff&amp;text_color=e6eef8&amp;icon_color=ffb400" alt="Vivesh's GitHub stats" loading="lazy">
+      </div>
+      <div class="stats-img-card">
+        <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=vivs-ty&amp;layout=compact&amp;theme=tokyonight&amp;hide_border=true&amp;bg_color=00000000&amp;title_color=54a0ff&amp;text_color=e6eef8" alt="Top languages used by Vivesh" loading="lazy">
+      </div>
+      <div class="stats-img-card stats-img-card--wide">
+        <img src="https://streak-stats.demolab.com/?user=vivs-ty&amp;theme=tokyonight&amp;hide_border=true&amp;background=00000000&amp;ring=54a0ff&amp;fire=ffb400&amp;currStreakLabel=54a0ff" alt="Vivesh's GitHub streak stats" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== Fun Fact ===================== -->
+  <section class="fun-fact-section fade-in" aria-label="Fun fact">
+    <div class="fun-fact-inner">
+      <span class="fun-fact-emoji" aria-hidden="true" id="fun-fact-emoji">⚡</span>
+      <p class="fun-fact-text"><strong>Fun Fact:</strong> <span id="fun-fact-body">When I'm not exploring tech, you'll find me solving puzzles 🧩 or experimenting with new recipes 🍲</span></p>
+    </div>
+  </section>
+
+  <!-- ===================== Quote Banner ===================== -->
+  <div class="quote-banner fade-in" aria-label="Inspirational quote">
+    <span class="quote-text" id="quote-typewriter"></span><span class="blinker" aria-hidden="true">|</span>
+  </div>
 
   <section id="contact" class="section fade-in">
     <h2>Get In Touch</h2>
