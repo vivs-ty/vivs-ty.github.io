@@ -290,6 +290,52 @@ button[type=submit]:hover {
   color: var(--primary);
 }
 
+.badges-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.8em;
+  justify-content: center;
+  margin-top: 1.5em;
+}
+
+.badge-card {
+  background: var(--card);
+  border-radius: 14px;
+  box-shadow: 0 1px 8px var(--shadow);
+  padding: 1.2em 1em 0.8em 1em;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  min-width: 170px;
+}
+
+.badge-card:hover {
+  transform: translateY(-6px) scale(1.04);
+  box-shadow: 0 4px 18px var(--shadow);
+}
+
+.badge-label {
+  font-size: 0.82em;
+  color: var(--primary);
+  margin-top: 0.5em;
+  line-height: 1.4;
+}
+
+.cert-intro {
+  margin-bottom: 0.2em;
+  color: var(--primary);
+  opacity: 0.8;
+}
+
+.cert-intro a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.cert-intro a:hover {
+  text-decoration: underline;
+}
+
 footer {
   text-align: center;
   color: #888;
