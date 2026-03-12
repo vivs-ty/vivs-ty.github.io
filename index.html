@@ -2,13 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Vivesh Tyagi | Sr. Cloud Specialist </title>
+  <title>Vivesh Tyagi | Sr. Cloud Specialist</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <script defer src="script.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+  <div id="scroll-progress" aria-hidden="true"></div>
+
   <nav id="navbar">
     <div class="logo">Vivesh Tyagi</div>
     <ul class="nav-links">
@@ -31,31 +33,125 @@
   <header id="home" class="section hero-section">
     <canvas id="bg-canvas" aria-hidden="true"></canvas>
     <div class="hero-content">
+      <div class="hero-avatar" aria-hidden="true">VT</div>
       <h1><span id="typing"></span></h1>
-      <p>Cloud Enthusiast | DevOps Engineer | Open Source Contributor</p>
+      <p class="hero-sub">Cloud Enthusiast | DevOps Engineer | Open Source Contributor</p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn-primary"><i class="fas fa-rocket"></i> View My Work</a>
+        <a href="#contact" class="btn-outline"><i class="fas fa-envelope"></i> Get In Touch</a>
+      </div>
       <div class="social-icons">
-        <a href="https://github.com/vivs-ty" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://in.linkedin.com/in/vivesh-tyagi-9085a9a9" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/vivs-ty" target="_blank" aria-label="GitHub" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+        <a href="https://in.linkedin.com/in/vivesh-tyagi-9085a9a9" target="_blank" aria-label="LinkedIn" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
       </div>
     </div>
+    <a href="#about" class="scroll-indicator" aria-label="Scroll down">
+      <i class="fas fa-chevron-down"></i>
+    </a>
   </header>
+
+  <section class="stats-section fade-in" aria-label="Key statistics">
+    <div class="stat-item">
+      <span class="stat-number" data-target="3">0</span><span class="stat-suffix">+</span>
+      <span class="stat-label">Years Experience</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number" data-target="10">0</span><span class="stat-suffix">+</span>
+      <span class="stat-label">Projects Delivered</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number" data-target="3">0</span><span class="stat-suffix"></span>
+      <span class="stat-label">Certifications</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number" data-target="5">0</span><span class="stat-suffix">+</span>
+      <span class="stat-label">Cloud Platforms</span>
+    </div>
+  </section>
 
   <section id="about" class="section fade-in">
     <h2>About Me</h2>
-    <p>
-      Passionate about automating cloud infrastructure with hands-on experience in AWS, GCP, DevOps tooling, and open-source. I love collaborating, learning, and solving real-world problems. I also enjoy solving puzzles and trying new recipes!
-    </p>
+    <div class="about-grid">
+      <div class="about-left">
+        <div class="about-avatar" aria-hidden="true">VT</div>
+        <div class="about-tags">
+          <span class="tag"><i class="fas fa-map-marker-alt"></i> India</span>
+          <span class="tag available-tag"><i class="fas fa-circle"></i> Open to Opportunities</span>
+          <span class="tag"><i class="fas fa-cloud"></i> Cloud &amp; DevOps</span>
+        </div>
+      </div>
+      <div class="about-right">
+        <p>Passionate about automating cloud infrastructure with hands-on experience in <strong>AWS</strong>, <strong>GCP</strong>, DevOps tooling, and open-source. I love collaborating, learning, and solving real-world problems. I also enjoy solving puzzles and trying new recipes!</p>
+        <p>I specialize in building resilient, scalable infrastructure pipelines — from provisioning with <strong>Terraform</strong> to orchestrating with <strong>Ansible</strong>, and everything in between.</p>
+        <div class="about-highlights">
+          <div class="highlight-item"><i class="fas fa-check-circle"></i> Infrastructure as Code (IaC)</div>
+          <div class="highlight-item"><i class="fas fa-check-circle"></i> CI/CD Pipeline Design</div>
+          <div class="highlight-item"><i class="fas fa-check-circle"></i> Cloud Cost Optimization</div>
+          <div class="highlight-item"><i class="fas fa-check-circle"></i> Multicloud Networking</div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section id="skills" class="section fade-in">
     <h2>Skills</h2>
-    <div class="skills-container">
-      <div class="skill-card"><i class="fab fa-git-alt"></i>GIT</div>
-      <div class="skill-card"><i class="fab fa-aws"></i>AWS</div>
-      <div class="skill-card"><i class="fab fa-google"></i>GCP</div>
-      <div class="skill-card"><i class="fas fa-terminal"></i>Shell Scripting</div>
-      <div class="skill-card"><i class="fas fa-gear"></i>Ansible</div>
-      <div class="skill-card"><i class="fas fa-code-branch"></i>Terraform</div>
+    <div class="skills-bars">
+      <div class="skill-bar-item">
+        <div class="skill-bar-header">
+          <span><i class="fab fa-aws"></i> AWS</span>
+          <span class="skill-pct">85%</span>
+        </div>
+        <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="85"></div></div>
+      </div>
+      <div class="skill-bar-item">
+        <div class="skill-bar-header">
+          <span><i class="fab fa-google"></i> GCP</span>
+          <span class="skill-pct">75%</span>
+        </div>
+        <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="75"></div></div>
+      </div>
+      <div class="skill-bar-item">
+        <div class="skill-bar-header">
+          <span><i class="fas fa-code-branch"></i> Terraform</span>
+          <span class="skill-pct">90%</span>
+        </div>
+        <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="90"></div></div>
+      </div>
+      <div class="skill-bar-item">
+        <div class="skill-bar-header">
+          <span><i class="fas fa-gear"></i> Ansible</span>
+          <span class="skill-pct">80%</span>
+        </div>
+        <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="80"></div></div>
+      </div>
+      <div class="skill-bar-item">
+        <div class="skill-bar-header">
+          <span><i class="fas fa-terminal"></i> Shell Scripting</span>
+          <span class="skill-pct">85%</span>
+        </div>
+        <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="85"></div></div>
+      </div>
+      <div class="skill-bar-item">
+        <div class="skill-bar-header">
+          <span><i class="fab fa-git-alt"></i> GIT</span>
+          <span class="skill-pct">88%</span>
+        </div>
+        <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="88"></div></div>
+      </div>
+      <div class="skill-bar-item">
+        <div class="skill-bar-header">
+          <span><i class="fab fa-docker"></i> Docker</span>
+          <span class="skill-pct">72%</span>
+        </div>
+        <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="72"></div></div>
+      </div>
+      <div class="skill-bar-item">
+        <div class="skill-bar-header">
+          <span><i class="fas fa-dharmachakra"></i> Kubernetes</span>
+          <span class="skill-pct">65%</span>
+        </div>
+        <div class="skill-bar-track"><div class="skill-bar-fill" data-pct="65"></div></div>
+      </div>
     </div>
   </section>
 
@@ -95,12 +191,24 @@
     </div>
     <div class="projects-container">
       <div class="project-card" data-tags="aws devops" tabindex="0" onclick="openModal('proj1')">
+        <div class="project-card-icon"><i class="fab fa-aws"></i></div>
         <h3>AWS Infra Automation</h3>
-        <p>Provision cloud infra using Terraform & Ansible.</p>
+        <p>Provision cloud infra using Terraform &amp; Ansible.</p>
+        <div class="project-tech-tags">
+          <span class="tech-tag">Terraform</span>
+          <span class="tech-tag">Ansible</span>
+          <span class="tech-tag">AWS</span>
+        </div>
       </div>
       <div class="project-card" data-tags="gcp devops" tabindex="0" onclick="openModal('proj2')">
+        <div class="project-card-icon"><i class="fab fa-google"></i></div>
         <h3>GCP Cloud Scripts</h3>
-        <p>Shell scripts for GCP automation & monitoring.</p>
+        <p>Shell scripts for GCP automation &amp; monitoring.</p>
+        <div class="project-tech-tags">
+          <span class="tech-tag">Shell</span>
+          <span class="tech-tag">GCP</span>
+          <span class="tech-tag">Python</span>
+        </div>
       </div>
       <!-- Add more projects as needed -->
     </div>
@@ -108,33 +216,70 @@
     <div id="proj1" class="modal" role="dialog" aria-modal="true" aria-labelledby="proj1-title">
       <div class="modal-content">
         <button class="close" aria-label="Close" onclick="closeModal('proj1')">&times;</button>
+        <div class="modal-icon"><i class="fab fa-aws"></i></div>
         <h3 id="proj1-title">AWS Infra Automation</h3>
-        <p>Automates AWS resource provisioning and configuration using Terraform and Ansible playbooks. <br>
-        <a href="https://github.com/vivs-ty/aws-infra-automation" target="_blank">View on GitHub</a></p>
+        <p>Automates AWS resource provisioning and configuration using Terraform and Ansible playbooks.</p>
+        <div class="project-tech-tags modal-tags">
+          <span class="tech-tag">Terraform</span>
+          <span class="tech-tag">Ansible</span>
+          <span class="tech-tag">AWS</span>
+        </div>
+        <a href="https://github.com/vivs-ty/aws-infra-automation" target="_blank" class="modal-link" rel="noopener noreferrer">
+          <i class="fab fa-github"></i> View on GitHub
+        </a>
       </div>
     </div>
     <div id="proj2" class="modal" role="dialog" aria-modal="true" aria-labelledby="proj2-title">
       <div class="modal-content">
         <button class="close" aria-label="Close" onclick="closeModal('proj2')">&times;</button>
+        <div class="modal-icon"><i class="fab fa-google"></i></div>
         <h3 id="proj2-title">GCP Cloud Scripts</h3>
-        <p>Reusable shell scripts for GCP resource management, automation, and monitoring.<br>
-        <a href="https://github.com/vivs-ty/gcp-cloud-scripts" target="_blank">View on GitHub</a></p>
+        <p>Reusable shell scripts for GCP resource management, automation, and monitoring.</p>
+        <div class="project-tech-tags modal-tags">
+          <span class="tech-tag">Shell</span>
+          <span class="tech-tag">GCP</span>
+          <span class="tech-tag">Python</span>
+        </div>
+        <a href="https://github.com/vivs-ty/gcp-cloud-scripts" target="_blank" class="modal-link" rel="noopener noreferrer">
+          <i class="fab fa-github"></i> View on GitHub
+        </a>
       </div>
     </div>
   </section>
 
   <section id="contact" class="section fade-in">
-    <h2>Contact</h2>
+    <h2>Get In Touch</h2>
+    <p class="contact-intro">Have a project in mind or want to collaborate? I'd love to hear from you!</p>
     <form class="contact-form" action="mailto:viveshtyagi.work@gmail.com" method="POST" enctype="text/plain">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit">Send <i class="fas fa-paper-plane"></i></button>
+      <div class="input-group">
+        <input type="text" name="name" id="inp-name" placeholder=" " required>
+        <label for="inp-name">Your Name</label>
+      </div>
+      <div class="input-group">
+        <input type="email" name="email" id="inp-email" placeholder=" " required>
+        <label for="inp-email">Your Email</label>
+      </div>
+      <div class="input-group">
+        <textarea name="message" id="inp-message" rows="5" placeholder=" " required></textarea>
+        <label for="inp-message">Your Message</label>
+      </div>
+      <button type="submit">Send Message <i class="fas fa-paper-plane"></i></button>
     </form>
   </section>
 
   <footer>
-    <p>© 2025 Vivesh Tyagi</p>
+    <div class="footer-content">
+      <div class="footer-social">
+        <a href="https://github.com/vivs-ty" target="_blank" aria-label="GitHub" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+        <a href="https://in.linkedin.com/in/vivesh-tyagi-9085a9a9" target="_blank" aria-label="LinkedIn" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.credly.com/users/vivesh-tyagi/badges" target="_blank" aria-label="Credly Badges" rel="noopener noreferrer"><i class="fas fa-award"></i></a>
+      </div>
+      <p>© 2025 Vivesh Tyagi &nbsp;·&nbsp; Built with <i class="fas fa-heart" style="color:#ff6b6b" aria-hidden="true"></i> &amp; ☁️</p>
+    </div>
   </footer>
+
+  <button id="back-to-top" aria-label="Back to top" title="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
 </body>
 </html>
