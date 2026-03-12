@@ -231,104 +231,7 @@ function initShortcuts(pc) {
   });
 }
 
-// ===================== Cursor Spotlight =====================
-function initCursorSpotlight() {
-  const el = document.getElementById('cursor-spotlight');
-  if (!el) return;
-  document.addEventListener('mousemove', e => {
-    el.style.left = e.clientX + 'px';
-    el.style.top  = e.clientY + 'px';
-  });
-}
-
-// ===================== Ripple Effect =====================
-function initRipple() {
-  const targets = '.btn-primary, .btn-outline, button[type=submit], .filter-btn, .resume-btn, #theme-toggle, #back-to-top';
-  document.addEventListener('click', e => {
-    const btn = e.target.closest(targets);
-    if (!btn) return;
-    const rect = btn.getBoundingClientRect();
-    const size = Math.max(rect.width, rect.height);
-    const ripple = document.createElement('span');
-    ripple.className = 'ripple';
-    ripple.style.cssText = `width:${size}px;height:${size}px;left:${e.clientX - rect.left - size / 2}px;top:${e.clientY - rect.top - size / 2}px`;
-    btn.appendChild(ripple);
-    ripple.addEventListener('animationend', () => ripple.remove());
-  });
-}
-
-// ===================== 3D Card Tilt =====================
-function initCardTilt() {
-  $$('.project-card').forEach(card => {
-    card.addEventListener('mousemove', e => {
-      const rect = card.getBoundingClientRect();
-      const cx = rect.left + rect.width / 2;
-      const cy = rect.top  + rect.height / 2;
-      const dx = (e.clientX - cx) / (rect.width  / 2);
-      const dy = (e.clientY - cy) / (rect.height / 2);
-      card.style.transform = `translateY(-5px) scale(1.02) rotateY(${dx * 8}deg) rotateX(${-dy * 8}deg)`;
-    });
-    card.addEventListener('mouseleave', () => { card.style.transform = ''; });
-  });
-}
-
-// ===================== Quote Typewriter =====================
-function initQuoteTypewriter() {
-  const el = document.getElementById('quote-typewriter');
-  if (!el) return;
-  const quote = '✨  "Always learning, always building."';
-  let idx = 0;
-  function tick() {
-    if (idx <= quote.length) {
-      el.textContent = quote.slice(0, idx++);
-      setTimeout(tick, 55);
-    }
-  }
-  // start when element is in view
-  const obs = new IntersectionObserver(entries => {
-    if (entries[0].isIntersecting) { obs.disconnect(); tick(); }
-  }, { threshold: 0.5 });
-  obs.observe(el.parentElement || el);
-}
-
-// ===================== Fun Fact Rotator =====================
-function initFunFact() {
-  const facts = [
-    { emoji: '⚡', text: "When I'm not exploring tech, you'll find me solving puzzles 🧩 or experimenting with new recipes 🍲" },
-    { emoji: '☁️', text: "I've automated my home network using Ansible playbooks — yes, really." },
-    { emoji: '🧩', text: "I can solve a Rubik's Cube in under 2 minutes. Muscle memory + algorithms!" },
-    { emoji: '🍲', text: "I believe cooking and DevOps have the same secret: having a good pipeline." },
-    { emoji: '🚀', text: "\"Move fast, but don't break prod.\" — My personal motto." }
-  ];
-  const emojiEl = document.getElementById('fun-fact-emoji');
-  const bodyEl  = document.getElementById('fun-fact-body');
-  if (!emojiEl || !bodyEl) return;
-  let current = 0;
-  const intervalId = setInterval(() => {
-    current = (current + 1) % facts.length;
-    emojiEl.style.animation = 'none';
-    void emojiEl.offsetWidth; // reflow
-    emojiEl.style.animation = '';
-    emojiEl.textContent = facts[current].emoji;
-    bodyEl.textContent   = facts[current].text;
-  }, 5000);
-  return intervalId;
-}
-
-// ===================== Flip Card Keyboard Support =====================
-function initFlipCards() {
-  $$('.flip-card').forEach(card => {
-    card.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        const inner = card.querySelector('.flip-card-inner');
-        inner.style.transform = inner.style.transform === 'rotateY(180deg)' ? '' : 'rotateY(180deg)';
-      }
-    });
-  });
-}
-
-
+// ===================== Bootstrap =====================
 document.addEventListener('DOMContentLoaded', () => {
   typeAnim();
   initTheme();
@@ -340,10 +243,4 @@ document.addEventListener('DOMContentLoaded', () => {
   initProjectFilters();
   const pc = initParticles();
   initShortcuts(pc);
-  initCursorSpotlight();
-  initRipple();
-  initCardTilt();
-  initQuoteTypewriter();
-  initFunFact();
-  initFlipCards();
 });
